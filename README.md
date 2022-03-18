@@ -1,1 +1,4 @@
-# Simple Blockchain Project with Golang
+# go-chain-man
+
+Simple Blockchain Project with Golang
+ 
