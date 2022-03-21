@@ -21,4 +21,8 @@ func main() {
 	fmt.Printf("my_blockchain_address %.1f\n", blockchain.CalculateTotalAmount("my_blockchain_address"))
 	fmt.Printf("C %.1f\n", blockchain.CalculateTotalAmount("C"))
 	fmt.Printf("D %.1f\n", blockchain.CalculateTotalAmount("D"))
+
+	w := domain.NewWallet()
+	fmt.Println(w.PrivateKeyStr())
+	fmt.Println(w.PublicKeyStr())
 }
