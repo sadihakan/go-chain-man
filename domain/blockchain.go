@@ -70,6 +70,23 @@ func (bc *Blockchain) Mining() bool {
 	return true
 }
 
+func (bc *Blockchain) CalculateTotalAmount(address string) float32 {
+	var totalAmount float32 = 0.0
+	for _, b := range bc.chain {
+		for _, t := range b.transactions {
+			value := t.value
+			if address == t.recipientAddress {
+				totalAmount += value
+			}
+
+			if address == t.senderAddress {
+				totalAmount -= value
+			}
+		}
+	}
+	return totalAmount
+}
+
 func (bc *Blockchain) Print() {
 	for i, block := range bc.chain {
 		fmt.Printf("%s Chain - %d %s\n", strings.Repeat("-", 25), i, strings.Repeat("-", 25))

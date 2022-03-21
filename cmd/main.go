@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"go-chain-man/domain"
 )
 
@@ -16,4 +17,8 @@ func main() {
 	blockchain.Mining()
 
 	blockchain.Print()
+
+	fmt.Printf("my_blockchain_address %.1f\n", blockchain.CalculateTotalAmount("my_blockchain_address"))
+	fmt.Printf("C %.1f\n", blockchain.CalculateTotalAmount("C"))
+	fmt.Printf("D %.1f\n", blockchain.CalculateTotalAmount("D"))
 }
